@@ -3,6 +3,7 @@
     {{ name }}
     <span v-if="loading">加载中...</span>
   </h3>
+  {{ user.currentUser }}
 </template>
 
 <script>
@@ -14,12 +15,13 @@ export default {
 
   computed: {
     ...mapGetters(['name']),
-    ...mapState(['loading']),
+    ...mapState(['loading', 'user']),
   },
 
   created() {
     // this.$store.dispatch('getName');
     this.getName();
+    this.getCurrentUser();
   },
 
   methods: {
@@ -27,6 +29,7 @@ export default {
 
     ...mapActions({
       getName: 'getName',
+      getCurrentUser: 'getCurrentUser',
     }),
 
     onClickName() {
