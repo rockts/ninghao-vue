@@ -13,6 +13,10 @@ export default {
     ...mapGetters(['name']),
   },
 
+  created() {
+    this.$store.dispatch('getName');
+  },
+
   methods: {
     ...mapMutations(['setName']),
 
