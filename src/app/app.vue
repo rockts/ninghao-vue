@@ -1,15 +1,13 @@
 <template>
   <h3>{{ name }}</h3>
-  <AppButton></AppButton>
+  <AppButton text="确定"></AppButton>
   <AppButton />
   <app-button></app-button>
   <app-button />
-  <AppDemoButton />
 </template>
 
 <script>
 import AppButton from './components/app-button';
-import AppDemoButton from './components/app-demo-button';
 
 export default {
   data() {
@@ -18,7 +16,7 @@ export default {
     };
   },
 
-  components: { AppButton, AppDemoButton },
+  components: { AppButton },
 };
 </script>
 
