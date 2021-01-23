@@ -1,10 +1,10 @@
 <template>
   <h3>{{ name }}</h3>
-  <AppButton @tap="onTapAppButton" @init="onInitAppButton">提交</AppButton>
+  <USerProfile />
 </template>
 
 <script>
-import AppButton from './components/app-button';
+import USerProfile from './components/user-profile';
 
 export default {
   data() {
@@ -23,7 +23,7 @@ export default {
     },
   },
 
-  components: { AppButton },
+  components: { USerProfile },
 };
 </script>
 
