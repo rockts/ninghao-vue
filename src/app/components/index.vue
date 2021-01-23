@@ -6,8 +6,8 @@
 export default {
   methods: {
     onClickText() {
-      //   this.$$route.push('/about');
-      this.$route.replace('/about');
+      this.$$route.push({ name: 'about' });
+      //   this.$route.replace('/about');
     },
   },
 };
