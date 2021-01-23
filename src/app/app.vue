@@ -1,5 +1,5 @@
 <template>
-  <h3>{{ name }}</h3>
+  <h3 @click="onClickName">{{ name }}</h3>
 </template>
 
 <script>
@@ -11,6 +11,16 @@ export default {
 
   computed: {
     ...mapGetters(['name']),
+  },
+
+  methods: {
+    onClickName() {
+      if (this.$store.state.name === '宁浩网') {
+        this.$store.commit('setName', 'NINGHAO');
+      } else {
+        this.$store.commit('setName', '宁浩网');
+      }
+    },
   },
 };
 </script>
