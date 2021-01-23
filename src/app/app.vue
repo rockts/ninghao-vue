@@ -1,5 +1,5 @@
 <template>
-  <h3>{{ name }}</h3>
+  <h3>{{ $store.state.name }}</h3>
 </template>
 
 <script>
