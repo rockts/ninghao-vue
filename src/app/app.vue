@@ -3,9 +3,13 @@
 </template>
 
 <script>
+import { ref } from 'vue';
+
 export default {
   setup() {
-    const name = '宁浩网';
+    const name = ref('宁浩网');
+
+    console.log(name.value);
 
     return {
       name,
