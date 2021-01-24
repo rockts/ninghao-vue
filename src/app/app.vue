@@ -7,6 +7,8 @@
     @login-error="onLoginError"
   />
 
+  <div v-if="currentUser">{{ currentUser.name }}</div>
+
   <input
     v-if="isLoggedIn"
     type="text"
@@ -39,6 +41,7 @@ export default {
       errorMessage: '',
       token: '',
       title: '',
+      currentUser: null,
     };
   },
 
@@ -53,8 +56,19 @@ export default {
   },
 
   methods: {
+    async getCurrentUser(userId) {
+      try {
+        const response = await apiHttpClient.get(`/users/${userId}`);
+
+        this.currentUser = response.data;
+      } catch (error) {
+        this.errorMessage = error.message;
+      }
+    },
+
     onLoginSuccess(data) {
       this.token = data.token;
+      this.getCurrentUser(data.id);
     },
 
     onLoginError(error) {
