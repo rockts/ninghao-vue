@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { axios } from '@/app/app.service';
+import { apiHttpClient } from '@/app/app.service';
 
 export default {
   data() {
@@ -20,9 +20,9 @@ export default {
 
   async created() {
     try {
-      const response = await axios.get('/posts');
+      const response = await apiHttpClient.get('/posts');
 
-      console.log(axios.defaults);
+      // console.log(axios.defaults);
 
       this.posts = response.data;
     } catch (error) {
