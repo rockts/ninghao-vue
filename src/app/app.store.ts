@@ -1,10 +1,15 @@
 import { createStore } from 'vuex';
+import { postStoreModule } from '../post/post.store';
 /**
  * 创建 Store
  */
 const store = createStore({
   state: {
     appName: '宁浩网',
+  },
+
+  modules: {
+    post: postStoreModule,
   },
 });
 
