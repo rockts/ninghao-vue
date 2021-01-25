@@ -43,7 +43,7 @@ export const postShowStoreModule: Module<PostShowStoreState, RootState> = {
 
   actions: {
     async getPostById({ commit }, postId) {
-      commit('seLoading', true);
+      commit('setLoading', true);
 
       try {
         const response = await apiHttpClient.get(`/posts/${postId}`);
